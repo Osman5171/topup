@@ -2,7 +2,7 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <title>eagle eye</title>
+  <title>eagle git add .eye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600&display=swap');
@@ -14,37 +14,36 @@
       background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      align-items: flex-start; /* flex-start for mobile scrolling */
+      padding-top: 20px;
     }
 
     .container {
       background: #fff;
+      width: 95%;
       max-width: 900px;
-      padding: 30px;
+      padding: 20px;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       text-align: left;
-      margin: 20px;
+      margin-bottom: 20px;
     }
 
-    /* Fade-in heading */
     h1 {
-      font-size: 24px;
+      font-size: 22px;
       color: #1a237e;
       text-align: center;
       margin-bottom: 20px;
+      line-height: 1.6;
       opacity: 0;
       animation: fadeIn 1.5s forwards;
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+    @keyframes fadeIn { to { opacity: 1; } }
 
     ol {
-      font-size: 16px;
-      line-height: 1.8;
+      font-size: 15px;
+      line-height: 1.7;
       color: #333;
       margin-left: 20px;
       opacity: 0;
@@ -59,6 +58,7 @@
       opacity: 0;
       animation: slideIn 1s forwards;
       animation-delay: 1s;
+      word-break: break-word;
     }
 
     .example {
@@ -73,22 +73,20 @@
       border-left: 4px solid #ff9800;
     }
 
-    @keyframes slideIn {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+    @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
     .link-box {
       display: flex;
+      flex-wrap: wrap; /* wrap for small screens */
       justify-content: center;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       padding: 12px 15px;
       margin: 25px auto;
       background: #f9f9f9;
       border: 1px solid #ddd;
       border-radius: 8px;
-      max-width: 95%;
+      max-width: 100%;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       opacity: 0;
       animation: fadeIn 1s forwards;
@@ -100,6 +98,7 @@
       color: #1a73e8;
       text-decoration: none;
       position: relative;
+      word-break: break-word;
     }
 
     a::after {
@@ -113,9 +112,7 @@
       transition: width 0.3s;
     }
 
-    a:hover::after {
-      width: 100%;
-    }
+    a:hover::after { width: 100%; }
 
     button {
       padding: 8px 14px;
@@ -129,12 +126,10 @@
       transition: background 0.3s;
     }
 
-    button:hover {
-      background-color: #155ab6;
-    }
+    button:hover { background-color: #155ab6; }
 
     @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      0%,20%,50%,80%,100% { transform: translateY(0); }
       40% { transform: translateY(-6px); }
       60% { transform: translateY(-3px); }
     }
@@ -160,10 +155,13 @@
       transform: scale(1.02);
     }
 
-    @media (min-width: 768px) {
-      iframe {
-        height: 400px;
-      }
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      h1 { font-size: 20px; }
+      ol { font-size: 14px; margin-left: 15px; }
+      iframe { height: 220px; }
+      .link-box { flex-direction: column; gap: 6px; padding: 10px; }
+      button { width: 100%; max-width: 200px; }
     }
   </style>
 </head>
